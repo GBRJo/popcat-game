@@ -56,7 +56,6 @@ html {
     width: 100%;
  }
         .p_image {
-            cursor: pointer;
          max-width: 100px;
          max-height: 100px;
           position: absolute;
@@ -66,7 +65,6 @@ html {
         }
 
         .op_image {
-            cursor: pointer;
             display: none;
             max-width: 100px;
             max-height: 100px;
@@ -90,6 +88,9 @@ html {
             left: -16px;
             max-width: 77%;
             height: auto;
+            opacity: 0;
+            transform: scaleX(0);
+            transition: opacity 1.5s;
         }
 
         .col1 {
@@ -169,7 +170,18 @@ html {
     height: auto;
     top: 10px;
     left: 10px;
+    transform: scaleY(0); /* Начальное значение для scaleY */
+    transform-origin: top; /* Устанавливаем точку преобразования в верхней части */
+    animation: scaleYAnimation 1.5s;
+    cursor: pointer;
 }
+
+.cat_up {
+    opacity: 1;
+   
+}
+
+
 /* Стили для изображений .image, .p_image и .op_image */
 .image, .p_image, .op_image {
     max-width: 100%;
