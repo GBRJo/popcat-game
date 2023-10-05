@@ -35,8 +35,7 @@ html {
         .holle {
         max-width: 100%;
         height: auto;
-        position: relative;
-        }
+            }
  .holles {
     display: flex;
     gap: 48px;
@@ -60,10 +59,10 @@ html {
             cursor: pointer;
          max-width: 100px;
          max-height: 100px;
-            position: absolute;
-            bottom: 12px;
-            right: 1px;
-           border-radius: 0 0 50% 50%;
+          position: absolute;
+          bottom: -61px;
+            right: 11px;
+           border-radius: 0 0 55% 50%;
         }
 
         .op_image {
@@ -71,24 +70,24 @@ html {
             display: none;
             max-width: 100px;
             max-height: 100px;
-            position: absolute;
-             bottom: 12px;
-            right: 1px;
-            border-radius: 0 0 50% 50%;
+        position: absolute;
+             bottom: -61px;
+            right: 11px;
+            border-radius: 0 0 55% 50%;
         }
         
         .overlay_image {
             position: absolute;
-            bottom: 12px;
-            left: 12px;
+            bottom: -63px;
+            left: 2px;
             max-width: 72%;
             height: auto;
         }
 
         .overlay_image2 {
             position: absolute;
-            bottom: -8px;
-            left: -6px;
+            bottom: -83px;
+            left: -16px;
             max-width: 77%;
             height: auto;
         }
@@ -156,11 +155,21 @@ html {
 .column {
     flex: 1;
     padding: 12px;
-    position: relative;
+   
+}
 
+.holl1, .holl2, .holl3, .holl4, .holl5, .holl6, .holl7, .holl8 {
+    position: relative;
 
 }
 
+.cat {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 10px;
+    left: 10px;
+}
 /* Стили для изображений .image, .p_image и .op_image */
 .image, .p_image, .op_image {
     max-width: 100%;
@@ -173,3 +182,34 @@ audio {
     max-width: 400px;
     margin-top: 20px;
 }
+
+
+.play-button {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 0.5px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-color: transparent; /* Добавляем прозрачный фон */
+  }
+  
+  .play-button:hover {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .play-button.play::before {
+    content: "\25B6";
+  }
+  
+  .play-button.pause::before {
+    content: "\II";
+  }

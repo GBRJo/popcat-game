@@ -15,13 +15,50 @@ pImage.addEventListener('click', function() {
         opImage.style.display = 'none';
     }, 100); // 1000 миллисекунд = 1 секунда
 });
-
-function randomTime(min, max) {
-    return Math.round(Math.random() * (max - min) + min);
+function randomTime(minValue, maxValue) {
+    return Math.round(Math.random() * (maxValue - minValue) + minValue);
 }
 
-// Пример использования:
-let minTime = 2000;
-let maxTime = 10000;
-let randomResult = randomTime(minTime, maxTime);
+let min = 150;
+let max = 1000;
 
+let randomResult = randomTime(min, max);
+
+
+const cat = document.querySelectorAll('.cat');
+const holl = document.querySelectorAll('.column');
+
+function randomHoll(holl) {
+    const i = Math.floor(Math.random() * holl.length);
+    resultHoll = holl[i];
+    return resultHoll;
+}
+
+const randomColumn = randomHoll(holl);
+console.log(randomColumn);
+
+
+
+
+
+
+
+
+
+
+
+
+const playButton = document.querySelector(".play-button");
+
+
+playButton.addEventListener("click", () => {
+    if (!songPlaying) {
+        playButton.classList.remove("play");
+        playButton.classList.add("pause");
+      
+    } else {
+        playButton.classList.remove("pause");
+        playButton.classList.add("play");
+      
+    }
+});
