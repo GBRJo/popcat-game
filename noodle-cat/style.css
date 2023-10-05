@@ -1,0 +1,175 @@
+html {
+    scroll-behavior: smooth;
+    }
+    
+    body {
+    background: #D6CAAF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 1280px;
+        padding: 0 24px;
+        
+        }
+        .field {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        row-gap: 48px;
+        column-gap: 24px;
+        width: 100%;
+        }
+        
+        .holle {
+        max-width: 100%;
+        height: auto;
+        position: relative;
+        }
+ .holles {
+    display: flex;
+    gap: 48px;
+    width: 100%;
+
+ }
+
+ .holles_row {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+ }
+
+ .holles_column {
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+    width: 100%;
+ }
+        .p_image {
+            cursor: pointer;
+         max-width: 100px;
+         max-height: 100px;
+            position: absolute;
+            bottom: 12px;
+            right: 1px;
+           border-radius: 0 0 50% 50%;
+        }
+
+        .op_image {
+            cursor: pointer;
+            display: none;
+            max-width: 100px;
+            max-height: 100px;
+            position: absolute;
+             bottom: 12px;
+            right: 1px;
+            border-radius: 0 0 50% 50%;
+        }
+        
+        .overlay_image {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            max-width: 72%;
+            height: auto;
+        }
+
+        .overlay_image2 {
+            position: absolute;
+            bottom: -8px;
+            left: -6px;
+            max-width: 77%;
+            height: auto;
+        }
+
+        .col1 {
+            grid-column: span 1;
+            }
+
+        .col3 {
+        grid-column: span 3;
+       
+        }
+        
+        footer {
+            display: flex;
+            margin: 0px 56px;
+            width: -webkit-fill-available;
+            justify-content: space-between;
+            align-items: center
+            }
+            
+            h6 {
+            color:#000;
+            font-family: roboto;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+            text-transform: capitalize;
+            margin: 0;
+            }
+            
+            .logo-image {
+            width: 80px;
+            height: 60px;
+            opacity: 15%;
+            }
+            
+            a {
+            text-decoration: none;
+            color: #000;
+            cursor: pointer;
+            }
+
+
+
+            /* Стили для блока .holle */
+.holle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+
+/* Стили для строк .row */
+.row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Стили для колонок .column */
+.column {
+    flex: 1;
+    padding: 12px;
+    position: relative;
+
+
+}
+
+/* Стили для изображений .image, .p_image и .op_image */
+.image, .p_image, .op_image {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Стили для аудио */
+audio {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+}
