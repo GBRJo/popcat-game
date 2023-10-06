@@ -69,7 +69,7 @@ html {
             max-width: 100px;
             max-height: 100px;
         position: absolute;
-             bottom: -61px;
+             bottom: -62px;
             right: 11px;
             border-radius: 0 0 55% 50%;
         }
@@ -89,8 +89,8 @@ html {
             max-width: 77%;
             height: auto;
             opacity: 0;
-            transform: scaleX(0);
             transition: opacity 1.5s;
+            display: none;
         }
 
         .col1 {
@@ -159,6 +159,12 @@ html {
    
 }
 
+.column_empty {
+    flex: 1;
+    padding: 12px;
+   
+}
+
 .holl1, .holl2, .holl3, .holl4, .holl5, .holl6, .holl7, .holl8 {
     position: relative;
 
@@ -170,17 +176,21 @@ html {
     height: auto;
     top: 10px;
     left: 10px;
-    transform: scaleY(0); /* Начальное значение для scaleY */
-    transform-origin: top; /* Устанавливаем точку преобразования в верхней части */
-    animation: scaleYAnimation 1.5s;
+    opacity: 0;
+    transition: opacity 0.5s;
     cursor: pointer;
+    display: none;
 }
 
-.cat_up {
+.cat.cat_up {
     opacity: 1;
-   
+    display: block;
 }
 
+.overlay_image2.cat_up {
+    opacity: 1;
+    display: block;
+}
 
 /* Стили для изображений .image, .p_image и .op_image */
 .image, .p_image, .op_image {
@@ -225,3 +235,15 @@ audio {
   .play-button.pause::before {
     content: "\II";
   }
+  .your_score {
+    position: absolute;
+    right: 48px;
+    top: -1px;
+    border:solid 1px #000;
+    padding: 48px;
+  }
+
+  
+.time {
+    display: flex;
+}
