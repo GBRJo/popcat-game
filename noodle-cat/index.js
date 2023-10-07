@@ -109,33 +109,41 @@ playButton.addEventListener("click", () => {
         }, 100); // Интервал в 100 миллисекунд (0.1 секунды)
         // Вызывайте функцию `pop` только после нажатия кнопки play
         pop();
-
-       
     } else {
         pauseTimer();
     }
     setTimeout(() => {
-        playButton.classList.remove("pause");
-        playButton.classList.add("play");
-        modalUp.style.display = "flex";
-        score = 0;
-        gamePlaying = false;
-        resetTimer();
-    }, 10000); // Сброс через 1 минуту (60000 миллисекунд)
+        if (gamePlaying === true) { // Используйте === для сравнения
+            playButton.classList.remove("pause");
+            playButton.classList.add("play");
+            modalUp.style.display = "flex";
+            localStorage.setItem("score", score);
+            score = 0;
+            getScore();
+            gamePlaying = false;
+            clearInterval(intervalId); // Остановить интервал
+            intervalId = null;
+            resetTimer();
+        }
+    }, 6000);
 });
 
 function pauseTimer() {
     clearInterval(intervalId); // Остановить интервал
+    intervalId = null; // Установить интервал в null
     playButton.classList.remove("pause");
     playButton.classList.add("play");
     gamePlaying = false;
+    resetTimer(); // Сбросить таймер
+    score = 0;
+    getScore();
 }
 
 function resetTimer() {
-    pauseTimer();
     currentTime = 0;
     const progressTime = document.querySelector(".current");
     progressTime.textContent = getTime(currentTime);
+    
 }
 // Функция для форматирования времени
 function getTime(duration) {
