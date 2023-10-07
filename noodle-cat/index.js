@@ -90,7 +90,7 @@ function pop() {
     }, time);
 }
 
-
+const modalUp = document.querySelector(".modal");
 const playButton = document.querySelector(".play-button");
 let gamePlaying = false;
 
@@ -117,7 +117,7 @@ playButton.addEventListener("click", () => {
     setTimeout(() => {
         playButton.classList.remove("pause");
         playButton.classList.add("play");
-       
+        modalUp.style.display = "flex";
         score = 0;
         gamePlaying = false;
         resetTimer();
@@ -145,3 +145,10 @@ function getTime(duration) {
     const formattedSeconds = String(seconds).padStart(2, '0');
     return `${formattedMinutes}:${formattedSeconds}`;
 }
+
+
+const exit = document.querySelector(".exit");
+
+exit.addEventListener("click", () => {
+    modalUp.style.display = "none";
+});
