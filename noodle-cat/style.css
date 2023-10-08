@@ -214,28 +214,36 @@ audio {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.3s;
+    transition: transform 0.2s ease; /* Use transform for the animation */
     position: absolute;
     left: 44px;
     top: 24px;
     background-color: transparent; /* Добавляем прозрачный фон */
   }
   
+  /* Styles for the play button on hover */
   .play-button:hover {
    
+    transform: scale(1.05); /* Increase size on hover */
   }
   
   .play-button.play::before {
-    content: ">";
-  }
+    content: ""; /* Удаляем текстовое содержимое */
+    display: inline-block;
+    width: 8px; /* Установите нужную ширину */
+    height: 16px; /* Установите нужную высоту */
+    background-image: url('assets/play.svg'); /* Укажите путь к вашей картинке */
+    background-size: cover; /* Растягиваем картинку для заполнения блока */
+}
   
   
   .play-button.pause::before {
-    content: "";
+    content: ""; /* Удаляем текстовое содержимое */
     display: inline-block;
-    width: 8px; /* Установите нужную ширину */
-    height: 8px; /* Установите нужную высоту */
-    border: 1.5px solid #000; /* Установите цвет граничной линии и ширину границы */
+    width: 12px; /* Установите нужную ширину */
+    height: 12px; /* Установите нужную высоту */
+    background-image: url('assets/stop.svg'); /* Укажите путь к вашей картинке */
+    background-size: cover; /* Растягиваем картинку для заполнения блока */
   }
 
   .your_score {
