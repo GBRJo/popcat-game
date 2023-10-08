@@ -204,6 +204,7 @@ audio {
 }
 
 
+
 .play-button {
     width: 40px;
     height: 40px;
@@ -313,7 +314,8 @@ letter-spacing: 0.4px;
     }
 .top {
     display: flex;
-    justify-content: space-evenly;
+   gap: 24px;
+   justify-content: center;
     margin-top: 16px;  
 /* Roboto 15 medium */
 font-family: Roboto;
@@ -327,6 +329,7 @@ letter-spacing: -0.225px;
     display: flex;
     flex-direction: column;
     gap: 8px;
+    align-items: flex-start;
 }
 
 .go_back {
