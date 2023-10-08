@@ -216,23 +216,28 @@ audio {
     justify-content: center;
     transition: opacity 0.3s;
     position: absolute;
-    left: 56px;
-    top: 32px;
+    left: 44px;
+    top: 24px;
     background-color: transparent; /* Добавляем прозрачный фон */
   }
   
   .play-button:hover {
-    width: 48px;
-    height: 48px;
+   
   }
   
   .play-button.play::before {
     content: ">";
   }
   
+  
   .play-button.pause::before {
-    content: "\II";
+    content: "";
+    display: inline-block;
+    width: 8px; /* Установите нужную ширину */
+    height: 8px; /* Установите нужную высоту */
+    border: 1.5px solid #000; /* Установите цвет граничной линии и ширину границы */
   }
+
   .your_score {
     position: absolute;
     right: 56px;
@@ -249,6 +254,7 @@ audio {
 .time {
     display: flex;
     padding-top: 4px;
+    gap: 4px;
 }
 
 .modal {
