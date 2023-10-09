@@ -10,6 +10,7 @@ html {
     height: 100vh;
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Slab', serif;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -22,6 +23,7 @@ html {
         justify-content: center;
         max-width: 1280px;
         padding: 0 24px;
+        margin-top: 24px;
         
         }
         .field {
@@ -117,7 +119,6 @@ html {
             font-style: normal;
             font-weight: 300;
             line-height: normal;
-            text-transform: capitalize;
             margin: 0;
             }
             
@@ -203,7 +204,15 @@ audio {
     margin-top: 20px;
 }
 
-
+.play-btn-container {
+    position: absolute;
+    display: flex;
+    gap: 16px;
+    left: 44px;
+    top: 24px;
+    text-transform: uppercase;
+    align-items: center;
+}
 
 .play-button {
     width: 40px;
@@ -216,9 +225,7 @@ audio {
     align-items: center;
     justify-content: center;
     transition: transform 0.2s ease; /* Use transform for the animation */
-    position: absolute;
-    left: 44px;
-    top: 24px;
+   
     background-color: transparent; /* Добавляем прозрачный фон */
   }
   
@@ -290,22 +297,22 @@ audio {
 
         text-align: center; 
 
-/* Roboto 32px */
-font-family: Roboto;
-font-size: 32px;
-font-style: normal;
-font-weight: 700;
-line-height: 41px; /* 128.125% */
-letter-spacing: 0.4px;
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-family: Roboto Slab;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 41px; /* 128.125% */
+        letter-spacing: 0.4px;
     }
 
     .final_score {
-   margin-top: 12px;    
+   margin-top: 8px;    
 
   
    text-align: center;
-   /* Roboto 22px */
-   font-family: Roboto;
+
+   font-family: Roboto Slab;
    font-size: 22px;
    font-style: normal;
    font-weight: 500;
@@ -321,7 +328,7 @@ letter-spacing: 0.4px;
 font-family: Roboto;
 font-size: 15px;
 font-style: normal;
-font-weight: 500;
+font-weight: 400;
 line-height: normal;
 letter-spacing: -0.225px;
 }
@@ -360,9 +367,19 @@ letter-spacing: 0.33px;
         width: 100%;
     }
 
+    .your_score {
+    color: #000;
+    font-family: roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    }
+
     .back_line {
         height: 0.8px;
         width: 100%;
         max-width: 399px;
         background-color: #000;
     }
+  

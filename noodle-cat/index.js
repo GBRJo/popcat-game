@@ -53,7 +53,7 @@ function randomCat(cat) {
 
 function pop() {
     let min = 300;
-    let max = 4000;
+    let max = 1500;
     let randomResult = randomTime(min, max);
 
     const randomSelectedCat = randomCat(cat); 
@@ -107,6 +107,11 @@ function endGameAndSaveResults() {
         playButton.classList.add("play");
         modalUp.style.display = "flex";
         gameResults.push(score);
+
+        if (gameResults.length > 11) {
+                 gameResults.shift();
+        }
+
         localStorage.setItem("gameResults", JSON.stringify(gameResults));
         score = 0;
         getScore();
@@ -120,83 +125,83 @@ function endGameAndSaveResults() {
         finalScore.textContent = `You popped ${lastResult} cat for 2 seconds`;
 
         const oneScore = document.querySelector(".one");
-        if (storedData.length >= 2) {
+        if (storedData.length > 1) {
             const oneResult = storedData[storedData.length - 2];
             oneScore.textContent = `1 - you popped ${oneResult} cat`;
         } else {
-            oneScore.textContent = `1 - `;
+            oneScore.textContent = `1 - you popped _ cat`;
         }
    
         const twoScore = document.querySelector(".two");
-        if (storedData.length >= 3) {
+        if (storedData.length > 2) {
             const twoResult = storedData[storedData.length - 3];
             twoScore.textContent = `2 - you popped ${twoResult} cat`;
         } else {
-            twoScore.textContent = `2 - `;
+            twoScore.textContent = `2 - you popped _ cat`;
         }
 
         const threScore = document.querySelector(".thre");
-        if (storedData.length >= 4) {
+        if (storedData.length > 3) {
             const threResult = storedData[storedData.length - 4];
             threScore.textContent = `3 - you popped ${threResult} cat`;
         } else {
-            threScore.style.display = "none";
+            threScore.textContent = `3 - you popped _ cat`;
         }
         
         const foreScore = document.querySelector(".fore");
-        if (storedData.length >= 5) {
+        if (storedData.length > 4) {
             const foreResult = storedData[storedData.length - 5];
             foreScore.textContent = `4 - you popped ${foreResult} cat`;
         } else {
-            foreScore.style.display = "none";
+            foreScore.textContent = `4 - you popped _ cat`;
         }
         
         const fiveScore = document.querySelector(".five");
-        if (storedData.length >= 6) {
+        if (storedData.length > 5) {
             const fiveResult = storedData[storedData.length - 6];
             fiveScore.textContent = `5 - you popped ${fiveResult} cat`;
         } else {
-            fiveScore.style.display = "none";
+            fiveScore.textContent = `5 - you popped _ cat`;
         }
 
         const sixScore = document.querySelector(".six");
-        if (storedData.length >= 7) {
+        if (storedData.length > 6) {
             const sixResult = storedData[storedData.length - 7];
             sixScore.textContent = `6 - you popped ${sixResult} cat`;
         } else {
-            sixScore.style.display = "none";
+            sixScore.textContent = `6 - you popped _ cat`;
         }
 
         const sevenScore = document.querySelector(".seven");
-        if (storedData.length >= 8) {
+        if (storedData.length > 7) {
             const sevenResult = storedData[storedData.length - 8];
            sevenScore.textContent = `7 - you popped ${sevenResult} cat`;
         } else {
-            sevenScore.style.display = "none";
+            sevenScore.textContent = `7 - you popped _cat`;
         }
 
         const eightScore = document.querySelector(".eight");
-        if (storedData.length >= 9) {
+        if (storedData.length > 8) {
             const eightResult = storedData[storedData.length - 9];
             eightScore.textContent = `8 - you popped ${eightResult} cat`;
         } else {
-            eightScore.style.display = "none";
+            eightScore.textContent = `8 - you popped _ cat`;
         }
 
         const nineScore = document.querySelector(".nine");
-        if (storedData.length >= 10) {
+        if (storedData.length > 9) {
            const nineResult = storedData[storedData.length - 10];
            nineScore.textContent = `9 - you popped ${nineResult} cat`;
         } else {
-            nineScore.style.display = "none";
+            nineScore.textContent = `9 - you popped _ cat`;
         }
        
         const tenScore = document.querySelector(".ten");
-        if (storedData.length >= 11) {
+        if (storedData.length > 10) {
             const tenResult = storedData[storedData.length - 11];
             tenScore.textContent = `10 - you popped ${tenResult} cat`;
         } else {
-            tenScore.style.display = "none";
+            tenScore.textContent = `10 - you popped _ cat`;
         }
 
     }
@@ -230,5 +235,5 @@ function getTime(duration) {
 const exit = document.querySelector(".exit");
 
 exit.addEventListener("click", () => {
-    modalUp.style.display = "none";
+      window.location.href = "https://rolling-scopes-school.github.io/gbrjo-JSFEPRESCHOOL2023Q2/noodle-cat/";
 });
