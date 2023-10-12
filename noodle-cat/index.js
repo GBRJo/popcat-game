@@ -79,15 +79,22 @@ function pop() {
 
 const modalUp = document.querySelector(".modal");
 const playButton = document.querySelector(".play-button");
-let gamePlaying = false;
 
 let intervalId;
+let timeout; 
 let currentTime = 0;
+let gamePlaying = false; 
 
 playButton.addEventListener("click", () => {
     if (!gamePlaying) {
+        currentTime = 0;
         playButton.classList.remove("play");
         playButton.classList.add("pause");
+        
+        if (timeout) {
+            clearTimeout(timeout);
+        }
+
         gamePlaying = true;
         intervalId = setInterval(() => {
             currentTime++;
@@ -95,11 +102,22 @@ playButton.addEventListener("click", () => {
             progressTime.textContent = getTime(currentTime);
         }, 100);
         pop();
-    } else {
+        
+
+        timeout = setTimeout(() => {
+            endGameAndSaveResults();
+        }, 12000);
+        } else {
+
+        gamePlaying = false;
+        if (timeout) {
+            clearTimeout(timeout);
+        }
+
         pauseTimer();
     }
-    setTimeout(endGameAndSaveResults, 12000);
 });
+
 
 function endGameAndSaveResults() {
     if (gamePlaying === true) {
@@ -208,6 +226,7 @@ function endGameAndSaveResults() {
 }
 
 function pauseTimer() {
+    currentTime = 0;
     clearInterval(intervalId);
     intervalId = null;
     playButton.classList.remove("pause");
@@ -216,13 +235,14 @@ function pauseTimer() {
     resetTimer();
     score = 0;
     getScore();
-}
+  }
 
 function resetTimer() {
+    gamePlaying = false;
     currentTime = 0;
     const progressTime = document.querySelector(".current");
     progressTime.textContent = getTime(currentTime);
-}
+ }
 
 function getTime(duration) {
     const minutes = Math.floor((duration % 3600) / 60);
