@@ -19,7 +19,7 @@ cats.forEach(function(cat) {
         setTimeout(function() {
             pImage.style.display = 'block';
             opImage.style.display = 'none';
-        }, 90);
+        }, 130);
     });
 });
 
@@ -34,7 +34,7 @@ cats.forEach(function(cat) {
     cat.addEventListener('click', function() {
         setTimeout(function() {
             cat.style.display = 'none';
-        }, 280);
+        }, 350);
     })
 });
 
@@ -52,7 +52,7 @@ function randomCat(cat) {
 }
 
 function pop() {
-    let min = 300;
+    let min = 450;
     let max = 1500;
     let randomResult = randomTime(min, max);
 

@@ -1,17 +1,12 @@
-html {
-    scroll-behavior: smooth;
-    }
     
     body {
     background: #D6CAAF;
     display: flex;
-    justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
     font-family: 'Roboto', sans-serif;
     font-family: 'Roboto Slab', serif;
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
     }
@@ -24,15 +19,8 @@ html {
         max-width: 1280px;
         padding: 0 24px;
         margin-top: 24px;
+        }
         
-        }
-        .field {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        row-gap: 48px;
-        column-gap: 24px;
-        width: 100%;
-        }
         
         .holle {
         max-width: 100%;
